@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Teste de Rastreio AQ-10 — Autêntico</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo-icon.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav">
+      <a href="sobre-tea.html">Sobre TEA</a>
+      <a href="teste-aq10.html" class="ativo">Teste AQ-10</a>
+      <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
+      <a href="forum.html">Fórum</a>
+      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="quem-somos.html">Quem Somos</a>
+    </nav>
+  </div>
+</header>
+<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<section class="page">
+  <div class="container">
+
+    <div id="tela-disclaimer">
+      <div class="disclaimer">
+        <h2>Antes de começar, é importante que você saiba:</h2>
+        <p>Este teste é uma ferramenta de <strong>rastreio</strong>, não de diagnóstico. Ele foi desenvolvido para indicar se pode valer a pena buscar uma avaliação profissional mais aprofundada — ele <strong>não confirma nem descarta</strong> o diagnóstico de TEA.</p>
+        <p>Apenas um profissional especializado (psiquiatra, neurologista ou psicólogo com experiência em neurodesenvolvimento) pode realizar uma avaliação diagnóstica completa.</p>
+        <p>Seu resultado é pessoal e não fica exposto publicamente no site.</p>
+        <label style="display:flex; align-items:center; gap:8px; margin:16px 0; font-size:14.5px;">
+          <input type="checkbox" id="check-entendi">
+          Li e entendi que este teste não substitui uma avaliação profissional.
+        </label>
+        <button class="btn btn-primary" id="btn-continuar" disabled>Entendi, quero continuar</button>
+      </div>
+      <p class="aviso-fonte">Baseado na versão brasileira validada do AQ-10 Adult — tradução do Instituto de Pesquisas Neuropsiquiátricas, SUAV/RJ, 2020, adaptação da escala original de Baron-Cohen et al., 2001.</p>
+    </div>
+
+    <form id="tela-teste" style="display:none;">
+      <h2>Teste de Rastreio AQ-10</h2>
+      <p>Para cada afirmação, marque a opção que melhor representa você.</p>
+
+      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <p class="progress-label" id="progress-label">0 de 10 respondidas</p>
+
+      <div id="lista-perguntas"></div>
+
+      <button type="submit" class="btn btn-primary" id="btn-ver-resultado" disabled style="margin-top:20px;">Ver resultado</button>
+    </form>
+
+    <div id="resultado-box">
+      <p class="pontuacao">Sua pontuação foi <span id="pontuacao-valor">0</span> de 10.</p>
+      <p id="resultado-texto"></p>
+      <a href="onde-buscar-ajuda.html" class="btn btn-primary">Ver onde buscar ajuda em Brasília/DF</a>
+    </div>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="assets/img/logo-wordmark.png" alt="Autêntico" class="footer-logo">
+    <p><strong>Autêntico</strong> — Informação · Respeito · Inclusão</p>
+  </div>
+</footer>
+
+<script src="assets/js/aq10.js"></script>
+</body>
+</html>

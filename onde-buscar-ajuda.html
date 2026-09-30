@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Onde Buscar Ajuda — Autêntico</title>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="icon" href="assets/img/logo-icon.png">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container">
+    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav">
+      <a href="sobre-tea.html">Sobre TEA</a>
+      <a href="teste-aq10.html">Teste AQ-10</a>
+      <a href="onde-buscar-ajuda.html" class="ativo">Onde Buscar Ajuda</a>
+      <a href="forum.html">Fórum</a>
+      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="quem-somos.html">Quem Somos</a>
+    </nav>
+  </div>
+</header>
+<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<section class="page">
+  <div class="container">
+    <h2>Onde Buscar Ajuda (Brasília/DF)</h2>
+    <p>Buscar um diagnóstico ou apoio pode parecer complicado no começo — por isso reunimos aqui, num só lugar, os principais caminhos disponíveis em Brasília e no Distrito Federal, tanto na rede pública quanto em serviços especializados.</p>
+    <p><strong>Atenção:</strong> informações de contato, endereço e funcionamento podem mudar. Recomendamos confirmar a disponibilidade antes de comparecer a qualquer um dos locais listados.</p>
+
+    <h3>Como funciona a rede pública</h3>
+    <p>O primeiro passo é procurar a <strong>UBS (Unidade Básica de Saúde) de referência</strong> mais próxima da sua casa. A equipe de saúde avalia o caso e encaminha para um dos <strong>CERs (Centros Especializados de Reabilitação)</strong> do DF, com neuropediatras, psiquiatras, psicólogos, fonoaudiólogos e assistentes sociais. Também é possível ter acompanhamento em saúde mental pelos <strong>CAPS</strong> da sua região.</p>
+
+    <div class="filtros" id="filtros">
+      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="sus">SUS</button>
+      <button class="filtro-btn" data-filtro="particular">Particular</button>
+      <button class="filtro-btn" data-filtro="associacao">Associação</button>
+    </div>
+
+    <div id="lista-recursos">
+
+      <div class="card" data-tipo="sus">
+        <span class="tag">SUS</span>
+        <h3>CER — Hospital de Apoio (HAB)</h3>
+        <p>Equipe multidisciplinar em TEA — neuropediatria, psiquiatria, psicologia, fonoaudiologia.</p>
+      </div>
+
+      <div class="card" data-tipo="sus">
+        <span class="tag">SUS</span>
+        <h3>CER II Taguatinga</h3>
+        <p>Centro Especializado em Reabilitação.</p>
+      </div>
+
+      <div class="card" data-tipo="sus">
+        <span class="tag">SUS</span>
+        <h3>Cretea — Centro de Referência Especializado em Autismo</h3>
+        <p>Centro de referência mais recente do DF, localizado no Metrô 108 Sul.</p>
+      </div>
+
+      <div class="card" data-tipo="sus">
+        <span class="tag">SUS</span>
+        <h3>CAPS da sua região</h3>
+        <p>Acompanhamento em saúde mental — busque o CAPS de referência do seu endereço.</p>
+      </div>
+
+      <div class="card" data-tipo="associacao">
+        <span class="tag">Associação</span>
+        <h3>ABRACI-DF</h3>
+        <p>Associação Brasileira de Autismo, Comportamento e Intervenção — suporte contínuo às famílias no DF e entorno.</p>
+      </div>
+
+      <div class="card" data-tipo="associacao">
+        <span class="tag">Associação</span>
+        <h3>Associação Tudo Azul Autismo</h3>
+        <p>Apoio a famílias no Distrito Federal.</p>
+      </div>
+
+      <div class="card" data-tipo="particular">
+        <span class="tag">Particular</span>
+        <h3>IBNTT — Asa Norte</h3>
+        <p>Diagnóstico de TEA, TDAH e altas habilidades — a partir de 16 anos.</p>
+      </div>
+
+    </div>
+
+    <p class="aviso-fonte">Nota: a AMA-DF, historicamente referência no Distrito Federal, encerrou suas atividades em 2024 após despejo da Secretaria de Saúde — por isso não consta na lista ativa.</p>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="container">
+    <img src="assets/img/logo-wordmark.png" alt="Autêntico" class="footer-logo">
+    <p><strong>Autêntico</strong> — Informação · Respeito · Inclusão</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById("filtros").addEventListener("click", (e) => {
+  if (!e.target.matches(".filtro-btn")) return;
+  document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("ativo"));
+  e.target.classList.add("ativo");
+  const filtro = e.target.dataset.filtro;
+  document.querySelectorAll("#lista-recursos .card").forEach(card => {
+    card.style.display = (filtro === "todos" || card.dataset.tipo === filtro) ? "block" : "none";
+  });
+});
+</script>
+
+</body>
+</html>
