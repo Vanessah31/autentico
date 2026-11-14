@@ -6,65 +6,94 @@
 <title>Fórum — Autêntico</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
       <a href="teste-aq10.html">Teste AQ-10</a>
       <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
-      <a href="forum.html" class="ativo">Fórum</a>
-      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="forum.html" class="ativo" aria-current="page">Fórum</a>
+      <a href="vivencias.html">Vozes &amp; Vivências</a>
       <a href="quem-somos.html">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="page">
   <div class="container">
-    <h2>Fórum</h2>
-    <p>Espaço de troca e apoio entre a comunidade. Nesta versão de demonstração, os posts abaixo são exemplos — a versão completa (com cadastro, publicação e denúncia de conteúdo) está implementada no backend Flask + MySQL do projeto.</p>
+    <h1>Fórum</h1>
+    <div class="disclaimer" role="note">
+      <h2>Este é um protótipo do fórum</h2>
+      <p>As três publicações abaixo são <strong>exemplos escritos pela equipe</strong> para mostrar como a comunidade vai funcionar. Não são relatos de pessoas reais.</p>
+      <p id="aviso-servico">O fórum de verdade, com cadastro, publicação, denúncia e moderação, está pronto no serviço do projeto, mas ainda não foi publicado.</p>
+    </div>
+
+    <div class="card" id="entrada-forum">
+      <h2 class="sub">Quer participar?</h2>
+      <p id="entrada-texto">O cadastro abre em breve. Enquanto isso, as publicações abaixo mostram como a comunidade vai funcionar.</p>
+      <p id="entrada-botoes" class="acoes-entrada" hidden>
+        <a class="btn btn-primary" id="link-cadastro" href="#">Cadastrar</a>
+        <a class="btn btn-outline" id="link-login" href="#">Entrar</a>
+        <a class="btn btn-outline" id="link-forum" href="#">Ir para o fórum</a>
+      </p>
+    </div>
 
     <div class="forum-layout">
       <aside>
-        <div class="categorias-list">
-          <a href="#" class="ativo">Todas</a>
-          <a href="#">Diagnóstico tardio</a>
-          <a href="#">Maternidade/paternidade atípica</a>
-          <a href="#">Dúvidas gerais</a>
-          <a href="#">Desabafos</a>
+        <div class="categorias-list" id="categorias" role="group" aria-label="Filtrar por categoria">
+          <button type="button" class="cat-btn" aria-pressed="true" data-cat="todas">Todas</button>
+          <button type="button" class="cat-btn" aria-pressed="false" data-cat="Diagnóstico tardio">Diagnóstico tardio</button>
+          <button type="button" class="cat-btn" aria-pressed="false" data-cat="Maternidade/paternidade atípica">Maternidade/paternidade atípica</button>
+          <button type="button" class="cat-btn" aria-pressed="false" data-cat="Dúvidas gerais">Dúvidas gerais</button>
+          <button type="button" class="cat-btn" aria-pressed="false" data-cat="Desabafos">Desabafos</button>
         </div>
       </aside>
 
-      <div>
-        <div class="card">
-          <span class="tag">Diagnóstico tardio</span>
+      <div id="lista-posts">
+        <h2 class="sr-only">Publicações</h2>
+        <p class="post-meta" id="status-posts" role="status">Mostrando 3 de 3 publicações de exemplo.</p>
+        <div class="card" data-cat="Diagnóstico tardio">
+          <span class="tag tag-exemplo">Exemplo</span><span class="tag">Diagnóstico tardio</span>
           <h3>Como foi o processo de vocês até o laudo?</h3>
-          <p class="post-meta">postado por um membro da comunidade</p>
+          <p class="post-meta">publicação de exemplo, escrita pela equipe</p>
           <p>Recebi meu diagnóstico aos 29 anos e ainda estou processando tudo. Queria saber como foi a experiência de outras pessoas que passaram por isso na vida adulta.</p>
         </div>
 
-        <div class="card">
-          <span class="tag">Maternidade/paternidade atípica</span>
+        <div class="card" data-cat="Maternidade/paternidade atípica">
+          <span class="tag tag-exemplo">Exemplo</span><span class="tag">Maternidade/paternidade atípica</span>
           <h3>Dicas para lidar com sobrecarga sensorial do meu filho</h3>
-          <p class="post-meta">postado por um membro da comunidade</p>
+          <p class="post-meta">publicação de exemplo, escrita pela equipe</p>
           <p>Meu filho tem 6 anos e às vezes fica muito sobrecarregado em ambientes barulhentos. Alguém tem estratégias que funcionaram na prática?</p>
         </div>
 
-        <div class="card">
-          <span class="tag">Dúvidas gerais</span>
+        <div class="card" data-cat="Dúvidas gerais">
+          <span class="tag tag-exemplo">Exemplo</span><span class="tag">Dúvidas gerais</span>
           <h3>Alguém mais recebeu diagnóstico depois dos 30?</h3>
-          <p class="post-meta">postado por um membro da comunidade</p>
+          <p class="post-meta">publicação de exemplo, escrita pela equipe</p>
           <p>Queria trocar experiências com quem passou por isso mais tarde na vida, tipo eu.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">
@@ -73,5 +102,34 @@
   </div>
 </footer>
 
+
+<script>
+const catBotoes = document.querySelectorAll(".cat-btn");
+const posts = document.querySelectorAll("#lista-posts .card");
+const statusPosts = document.getElementById("status-posts");
+
+document.getElementById("categorias").addEventListener("click", (e) => {
+  const botao = e.target.closest(".cat-btn");
+  if (!botao) return;
+
+  catBotoes.forEach((b) => b.setAttribute("aria-pressed", String(b === botao)));
+
+  const cat = botao.dataset.cat;
+  let visiveis = 0;
+  posts.forEach((post) => {
+    const mostrar = cat === "todas" || post.dataset.cat === cat;
+    post.hidden = !mostrar;
+    if (mostrar) visiveis++;
+  });
+
+  statusPosts.textContent =
+    visiveis === 0
+      ? "Nenhuma publicação de exemplo nesta categoria."
+      : `Mostrando ${visiveis} de ${posts.length} publicações de exemplo.`;
+});
+</script>
+
+<script src="assets/js/config.js"></script>
+<script src="assets/js/forum-entrada.js"></script>
 </body>
 </html>

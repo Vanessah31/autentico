@@ -6,23 +6,28 @@
 <title>Autêntico — apoio ao diagnóstico tardio de TEA</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
       <a href="teste-aq10.html">Teste AQ-10</a>
       <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
       <a href="forum.html">Fórum</a>
-      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="vivencias.html">Vozes &amp; Vivências</a>
       <a href="quem-somos.html">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="hero">
   <div class="container">
@@ -30,7 +35,7 @@
       <img src="assets/img/logo-wordmark.png" alt="Autêntico" class="wordmark-img">
       <img src="assets/img/coracao-puzzle.png" alt="" class="coracao-img">
     </div>
-    <p class="slogan-mini">INFORMAÇÃO<span>·</span>RESPEITO<span>·</span>INCLUSÃO</p>
+    <p class="slogan-mini">INFORMAÇÃO<span aria-hidden="true">·</span>RESPEITO<span aria-hidden="true">·</span>INCLUSÃO</p>
     <div class="texto-hero">
       <h1>Descobrir tarde não é chegar atrasado.</h1>
       <p class="lead">Uma plataforma de apoio ao diagnóstico tardio de autismo, com informação confiável, comunidade e acolhimento para pessoas atípicas, familiares e responsáveis.</p>
@@ -64,6 +69,14 @@
     </div>
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">

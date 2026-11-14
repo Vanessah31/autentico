@@ -22,6 +22,29 @@ A versão completa, com Flask, MySQL, cadastro de usuários e fórum funcional
 de verdade, está documentada separadamente e é a versão "de produção" do
 projeto — esta aqui cobre a exigência de publicação no GitHub Pages.
 
+## Acessibilidade
+
+O site foi pensado para um público que inclui pessoas autistas, então a acessibilidade faz parte do projeto:
+
+- **Aba de acessibilidade** em todas as páginas, na lateral direita da tela (no celular vira um botão redondo no canto): aumentar e diminuir o texto (100% a 150%), alto contraste, modo calmo (menos cor e sem movimento), fonte simples e restaurar padrão. As escolhas ficam salvas no navegador (`assets/js/acessibilidade.js`).
+- **Navegação por teclado**: link "Pular para o conteúdo", foco sempre visível e alvos de toque de pelo menos 44 px.
+- **Leitores de tela**: página principal marcada (`main`), um `h1` por página, menu com a página atual indicada (`aria-current`), filtros que avisam quantos itens aparecem e erros do teste anunciados.
+- **Teste AQ-10**: o foco acompanha a troca de tela, as perguntas não respondidas são indicadas com texto (não só com cor) e a barra de progresso é lida pelo leitor de tela.
+- **Contraste** das cores principais acima de 4,5:1 (nível AA do WCAG 2.1) e respeito à preferência de sistema "reduzir movimento".
+- Verificação automática com `axe-core` nas sete páginas, sem violações encontradas.
+
+## Como ligar o fórum quando ele estiver no ar
+
+O fórum de verdade é um serviço separado (Flask + MySQL, na pasta `autentico-forum`) e precisa ser hospedado num servidor. Enquanto isso não acontece, a página `forum.html` mostra "O cadastro abre em breve".
+
+Quando o serviço estiver no ar, **edite um único arquivo**, `assets/js/config.js`, e cole o endereço dele:
+
+```js
+window.AUTENTICO_FORUM_URL = "https://seu-forum.exemplo.com/";
+```
+
+Os botões "Cadastrar", "Entrar" e "Ir para o fórum" aparecem sozinhos na página. Só são aceitos endereços que começam com `https://` (ou `http://localhost`, para testes).
+
 ## Como publicar no GitHub Pages
 
 1. Crie um repositório novo no GitHub (ex: `autentico`).
@@ -47,7 +70,11 @@ autentico-site/
 ├── quem-somos.html           → Equipe e motivação do projeto
 ├── assets/
 │   ├── css/style.css         → Estilos de todo o site
-│   └── js/aq10.js            → Lógica do teste AQ-10
+│   └── js/
+│       ├── aq10.js           → Lógica do teste AQ-10
+│       ├── acessibilidade.js → Aba de acessibilidade
+│       ├── config.js         → Endereço do fórum (cole aqui quando estiver no ar)
+│       └── forum-entrada.js  → Liga os botões de cadastro do fórum
 └── README.md
 ```
 

@@ -6,52 +6,65 @@
 <title>Quem Somos — Autêntico</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
       <a href="teste-aq10.html">Teste AQ-10</a>
       <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
       <a href="forum.html">Fórum</a>
-      <a href="vivencias.html">Vozes & Vivências</a>
-      <a href="quem-somos.html" class="ativo">Quem Somos</a>
+      <a href="vivencias.html">Vozes &amp; Vivências</a>
+      <a href="quem-somos.html" class="ativo" aria-current="page">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="page">
   <div class="container">
-    <h2>Quem Somos</h2>
+    <h1>Quem Somos</h1>
     <p>O Autêntico nasceu como projeto da disciplina de <strong>Laboratório de Inovação IV</strong>, do curso de <strong>Análise e Desenvolvimento de Sistemas</strong>, sob orientação da professora <strong>Maristela Oliveira</strong>, na Faculdade Senac DF.</p>
 
-    <h3>Equipe</h3>
+    <h2 class="sub">Equipe</h2>
     <div class="equipe-grid">
       <div class="membro">
-        <img src="assets/img/equipe/cicera-taysa.png" alt="Cicera Taysa de Freitas Batista" class="avatar-foto">
+        <img src="assets/img/equipe/cicera-taysa.png" alt="" class="avatar-foto">
         <p>Cicera Taysa de Freitas Batista</p>
       </div>
       <div class="membro">
-        <img src="assets/img/equipe/vanessa-sousa.png" alt="Vanessa Sousa da Silva" class="avatar-foto">
+        <img src="assets/img/equipe/vanessa-sousa.png" alt="" class="avatar-foto">
         <p>Vanessa Sousa da Silva</p>
       </div>
       <div class="membro">
-        <img src="assets/img/equipe/veronica-alves.png" alt="Verônica Alves" class="avatar-foto">
+        <img src="assets/img/equipe/veronica-alves.png" alt="" class="avatar-foto">
         <p>Verônica Alves</p>
       </div>
     </div>
 
     <div class="motivacao-box">
-      <h3>Nossa motivação</h3>
+      <h2 class="sub">Nossa motivação</h2>
       <p>A ideia para este projeto surgiu de uma situação real vivida em sala de aula: um aluno autista de outra turma veio até a nossa para pedir silêncio, e esse momento gerou uma conversa importante com nossa professora sobre neurodivergência e diagnóstico tardio.</p>
       <p>Essa conversa nos fez perceber o quanto o tema do diagnóstico tardio ainda é pouco discutido, mesmo dentro do ambiente acadêmico, e o quanto falta informação acessível e espaços de acolhimento para quem vive essa realidade. O Autêntico é a forma que encontramos, como grupo, de transformar essa reflexão em algo útil.</p>
     </div>
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">

@@ -3,31 +3,38 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vozes & Vivências — Autêntico</title>
+<title>Vozes &amp; Vivências — Autêntico</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
       <a href="teste-aq10.html">Teste AQ-10</a>
       <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
       <a href="forum.html">Fórum</a>
-      <a href="vivencias.html" class="ativo">Vozes & Vivências</a>
+      <a href="vivencias.html" class="ativo" aria-current="page">Vozes &amp; Vivências</a>
       <a href="quem-somos.html">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="page">
   <div class="container">
-    <h2>Vozes & Vivências</h2>
+    <h1>Vozes &amp; Vivências</h1>
     <p>Números e informações técnicas ajudam a entender o TEA — mas são as histórias reais que ajudam a gente a se sentir compreendido. Aqui reunimos três vivências: quem recebeu o diagnóstico na vida adulta, quem cria um filho ou filha atípico, e como uma instituição de ensino pode acolher a neurodivergência.</p>
+
+    <h2 class="sr-only">Entrevistas</h2>
 
     <div class="card">
       <span class="tag">Diagnóstico tardio</span>
@@ -51,6 +58,14 @@
     </div>
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">

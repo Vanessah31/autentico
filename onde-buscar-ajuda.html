@@ -6,89 +6,140 @@
 <title>Onde Buscar Ajuda — Autêntico</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
       <a href="teste-aq10.html">Teste AQ-10</a>
-      <a href="onde-buscar-ajuda.html" class="ativo">Onde Buscar Ajuda</a>
+      <a href="onde-buscar-ajuda.html" class="ativo" aria-current="page">Onde Buscar Ajuda</a>
       <a href="forum.html">Fórum</a>
-      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="vivencias.html">Vozes &amp; Vivências</a>
       <a href="quem-somos.html">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="page">
   <div class="container">
-    <h2>Onde Buscar Ajuda (Brasília/DF)</h2>
-    <p>Buscar um diagnóstico ou apoio pode parecer complicado no começo — por isso reunimos aqui, num só lugar, os principais caminhos disponíveis em Brasília e no Distrito Federal, tanto na rede pública quanto em serviços especializados.</p>
-    <p><strong>Atenção:</strong> informações de contato, endereço e funcionamento podem mudar. Recomendamos confirmar a disponibilidade antes de comparecer a qualquer um dos locais listados.</p>
+    <h1>Onde Buscar Ajuda (Brasília/DF)</h1>
+    <p>Buscar um diagnóstico ou apoio pode parecer complicado no começo. Por isso reunimos aqui os principais caminhos em Brasília e no Distrito Federal, na rede pública e fora dela. <strong>Informações conferidas em novembro de 2026</strong> em páginas oficiais e reportagens, com o link da fonte em cada local. Endereços, telefones e regras mudam: confirme antes de ir.</p>
 
-    <h3>Como funciona a rede pública</h3>
-    <p>O primeiro passo é procurar a <strong>UBS (Unidade Básica de Saúde) de referência</strong> mais próxima da sua casa. A equipe de saúde avalia o caso e encaminha para um dos <strong>CERs (Centros Especializados de Reabilitação)</strong> do DF, com neuropediatras, psiquiatras, psicólogos, fonoaudiólogos e assistentes sociais. Também é possível ter acompanhamento em saúde mental pelos <strong>CAPS</strong> da sua região.</p>
-
-    <div class="filtros" id="filtros">
-      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
-      <button class="filtro-btn" data-filtro="sus">SUS</button>
-      <button class="filtro-btn" data-filtro="particular">Particular</button>
-      <button class="filtro-btn" data-filtro="associacao">Associação</button>
+    <div class="disclaimer" role="note">
+      <h2>Antes de começar: para quem é cada serviço</h2>
+      <p>A maior parte dos serviços públicos especializados em autismo do DF que encontramos atende crianças e adolescentes. Para adultos, o caminho público começa na UBS e depende de encaminhamento. Nas fontes que consultamos, não encontramos um serviço público do DF exclusivo para o diagnóstico de TEA em adultos, por isso cada local abaixo diz para quem ele é.</p>
+      <p>Se você é adulto, vale ir à UBS mesmo assim e pedir o encaminhamento por escrito. As regras e as filas podem variar.</p>
     </div>
+
+    <h2>Como funciona a rede pública</h2>
+    <p>O primeiro passo é a <strong>UBS (Unidade Básica de Saúde)</strong> de referência da sua casa. O médico de família, com apoio da equipe multiprofissional (eMulti), faz a avaliação inicial. Se não conseguir fechar o diagnóstico, pode encaminhar para um <strong>CER (Centro Especializado em Reabilitação)</strong>, que tem equipe multiprofissional.</p>
+
+    <h2>Locais de atendimento</h2>
+    <p class="filtro-rotulo" id="rot-tipo">Tipo de atendimento</p>
+    <div class="filtros" id="filtros-tipo" role="group" aria-labelledby="rot-tipo">
+      <button type="button" class="filtro-btn ativo" aria-pressed="true" data-valor="todos">Todos</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="sus">SUS</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="particular">Particular</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="associacao">Associação</button>
+    </div>
+    <p class="filtro-rotulo" id="rot-publico">Para quem</p>
+    <div class="filtros" id="filtros-publico" role="group" aria-labelledby="rot-publico">
+      <button type="button" class="filtro-btn ativo" aria-pressed="true" data-valor="todos">Todos</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="adultos">Adultos</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="criancas">Crianças e adolescentes</button>
+      <button type="button" class="filtro-btn" aria-pressed="false" data-valor="familias">Famílias</button>
+    </div>
+
+    <p class="post-meta" id="status-lista" role="status">Mostrando 8 de 8 locais.</p>
 
     <div id="lista-recursos">
 
-      <div class="card" data-tipo="sus">
-        <span class="tag">SUS</span>
-        <h3>CER — Hospital de Apoio (HAB)</h3>
-        <p>Equipe multidisciplinar em TEA — neuropediatria, psiquiatria, psicologia, fonoaudiologia.</p>
+      <div class="card" data-tipo="sus" data-publico="adultos criancas familias">
+        <span class="tag">SUS</span><span class="tag">Todas as idades</span>
+        <h3>UBS de referência (primeiro passo)</h3>
+        <p>É a porta de entrada da rede pública. A equipe faz a avaliação inicial e encaminha para o serviço especializado quando necessário.</p>
+        <p class="detalhe"><strong>Onde:</strong> A UBS mais próxima da sua casa.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Leve documento com foto e cartão do SUS. Peça o encaminhamento por escrito e pergunte para qual serviço ele vai.</p>
+        <p class="detalhe"><a href="https://www.cofen.gov.br/descoberta-do-autismo-na-vida-adulta-pode-ser-uma-chave-para-o-autoconhecimento/">Conselho Federal de Enfermagem: descoberta do autismo na vida adulta</a></p>
       </div>
-
-      <div class="card" data-tipo="sus">
-        <span class="tag">SUS</span>
-        <h3>CER II Taguatinga</h3>
-        <p>Centro Especializado em Reabilitação.</p>
+      <div class="card" data-tipo="sus" data-publico="criancas">
+        <span class="tag">SUS</span><span class="tag">Crianças e jovens</span>
+        <h3>CER II — Hospital de Apoio (HAB)</h3>
+        <p>Reportagem da Secretaria de Saúde o descreve como referência no atendimento de jovens de até 14 anos com autismo. Tem ambulatório infantil de TEA.</p>
+        <p class="detalhe"><strong>Onde:</strong> AENW 03, lote A, Setor Noroeste (ao lado do Hospital da Criança).</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Por encaminhamento médico ou relatório, apresentado na marcação de consultas do hospital ou pela central de regulação.</p>
+        <p class="detalhe"><a href="https://www.saude.df.gov.br/centro-especializado-em-reabilitacao-cer-ii-hospital-de-apoio">Página oficial da SES-DF sobre o CER II Hospital de Apoio</a></p>
       </div>
-
-      <div class="card" data-tipo="sus">
-        <span class="tag">SUS</span>
-        <h3>Cretea — Centro de Referência Especializado em Autismo</h3>
-        <p>Centro de referência mais recente do DF, localizado no Metrô 108 Sul.</p>
+      <div class="card" data-tipo="sus" data-publico="adultos criancas">
+        <span class="tag">SUS</span><span class="tag">Crianças e adultos (confirmar)</span>
+        <h3>CER II — Taguatinga</h3>
+        <p>Reabilitação física e intelectual e transtorno do espectro autista. A página da SES-DF cita encaminhamentos de adultos, mas vale confirmar se o serviço avalia adultos com suspeita de TEA.</p>
+        <p class="detalhe"><strong>Onde:</strong> AE 16, Taguatinga.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Encaminhamento da UBS. Para o primeiro acesso, costumam pedir cópia do encaminhamento, documento de identificação, cartão do SUS e comprovante de residência.</p>
+        <p class="detalhe"><a href="https://www.saude.df.gov.br/reabilitacao-fisica-e-intelectual">Página oficial da SES-DF sobre o CER II Taguatinga</a></p>
       </div>
-
-      <div class="card" data-tipo="sus">
-        <span class="tag">SUS</span>
+      <div class="card" data-tipo="sus" data-publico="adultos criancas familias">
+        <span class="tag">SUS</span><span class="tag">Todas as idades</span>
+        <h3>CER II — CEAL-LP (Asa Norte)</h3>
+        <p>Serviço filantrópico habilitado como Centro Especializado em Reabilitação (modalidades auditiva e intelectual), com atendimento de TEA para todas as faixas etárias.</p>
+        <p class="detalhe"><strong>Onde:</strong> SGAN 909, Módulo B, Asa Norte, CEP 70790-090.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> A unidade de saúde faz o encaminhamento. No primeiro acesso, leve cópia do encaminhamento da rede pública para entrar na lista de espera.</p>
+        <p class="detalhe"><a href="https://www.saude.df.gov.br/en/atendimento-ambulatorial-especializado-em-reabilitacao-auditiva-intelectual-e-transtorno-do-espectro-do-autismo-cer-ii-ceal-lp">Página oficial da SES-DF sobre o CER II CEAL-LP</a></p>
+      </div>
+      <div class="card" data-tipo="sus" data-publico="criancas">
+        <span class="tag">SUS</span><span class="tag">Crianças de 0 a 10 anos</span>
+        <h3>Cretea — Centro de Referência em TEA</h3>
+        <p>Primeiro centro do DF com foco exclusivo em autismo. Atende crianças de até 10 anos, com diagnóstico ou suspeita, que já estejam nas filas da rede pública. Não atende adolescentes nem adultos.</p>
+        <p class="detalhe"><strong>Onde:</strong> Estação 108 Sul do Metrô.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Por encaminhamento da rede pública. A porta de entrada é a UBS, e a vaga é regulada pela Secretaria de Saúde.</p>
+        <p class="detalhe"><a href="https://www.saude.df.gov.br/web/guest/w/centro-de-refer%C3%AAncia-em-transtorno-do-espectro-autista-fortalece-o-desenvolvimento-de-crian%C3%A7as-de-at%C3%A9-10-anos-no-df">Secretaria de Saúde do DF: Cretea fortalece o desenvolvimento de crianças de até 10 anos</a></p>
+      </div>
+      <div class="card" data-tipo="sus" data-publico="adultos">
+        <span class="tag">SUS</span><span class="tag">Adultos</span>
         <h3>CAPS da sua região</h3>
-        <p>Acompanhamento em saúde mental — busque o CAPS de referência do seu endereço.</p>
+        <p>Serviço de saúde mental para quem está em sofrimento psíquico intenso, como ansiedade ou depressão que atrapalham muito o dia a dia. Pode participar do cuidado de pessoas autistas.</p>
+        <p class="detalhe"><strong>Onde:</strong> Depende do seu endereço. A UBS informa qual CAPS atende a sua região.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Pergunte na UBS se o CAPS da sua região recebe adultos com suspeita de TEA.</p>
       </div>
-
-      <div class="card" data-tipo="associacao">
-        <span class="tag">Associação</span>
+      <div class="card" data-tipo="associacao" data-publico="criancas familias">
+        <span class="tag">Associação</span><span class="tag">Famílias, crianças e adolescentes</span>
         <h3>ABRACI-DF</h3>
-        <p>Associação Brasileira de Autismo, Comportamento e Intervenção — suporte contínuo às famílias no DF e entorno.</p>
+        <p>Associação fundada por familiares de autistas. O projeto de atendimento multidisciplinar descrito num plano de trabalho com o GDF é para crianças e adolescentes de 2 a 18 anos.</p>
+        <p class="detalhe"><strong>Onde:</strong> SRES, Área Especial ARUC S/N, Cruzeiro Velho.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Telefone, horários e formas de contato estão no site da associação.</p>
+        <p class="detalhe"><a href="https://abracidf.com/">Site da ABRACI-DF</a></p>
       </div>
-
-      <div class="card" data-tipo="associacao">
-        <span class="tag">Associação</span>
-        <h3>Associação Tudo Azul Autismo</h3>
-        <p>Apoio a famílias no Distrito Federal.</p>
-      </div>
-
-      <div class="card" data-tipo="particular">
-        <span class="tag">Particular</span>
-        <h3>IBNTT — Asa Norte</h3>
-        <p>Diagnóstico de TEA, TDAH e altas habilidades — a partir de 16 anos.</p>
+      <div class="card" data-tipo="particular" data-publico="adultos">
+        <span class="tag">Particular</span><span class="tag">Adultos e jovens a partir de 16 anos</span>
+        <h3>IBNTT — Instituto de TEA e TDAH</h3>
+        <p>Clínica de psiquiatria com foco em avaliação de TEA e TDAH em adultos e adolescentes a partir de 16 anos, presencial em Brasília e on-line. Não atende convênio, mas emite nota fiscal para possível reembolso.</p>
+        <p class="detalhe"><strong>Onde:</strong> O site lista dois endereços (Asa Norte e Asa Sul). Confirme ao agendar.</p>
+        <p class="detalhe"><strong>Como chegar ao serviço:</strong> Agendamento pelo WhatsApp indicado no site. Listamos como exemplo de serviço particular para adultos, não como recomendação: compare profissionais e confira o registro no CRM.</p>
+        <p class="detalhe"><a href="https://ibntt.psiq.med.br/">Site do IBNTT</a></p>
       </div>
 
     </div>
 
-    <p class="aviso-fonte">Nota: a AMA-DF, historicamente referência no Distrito Federal, encerrou suas atividades em 2024 após despejo da Secretaria de Saúde — por isso não consta na lista ativa.</p>
+    <p class="aviso-fonte">O que ficou de fora, e por quê: a AMA-DF encerrou as atividades em 2024, após despejo da Secretaria de Saúde. A Associação Tudo Azul Autismo aparece em registros do Senado de 2022, mas não encontramos um contato atual verificado, então não a listamos. A presença de um serviço particular nesta página não é recomendação.</p>
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">
@@ -98,15 +149,41 @@
 </footer>
 
 <script>
-document.getElementById("filtros").addEventListener("click", (e) => {
-  if (!e.target.matches(".filtro-btn")) return;
-  document.querySelectorAll(".filtro-btn").forEach(b => b.classList.remove("ativo"));
-  e.target.classList.add("ativo");
-  const filtro = e.target.dataset.filtro;
-  document.querySelectorAll("#lista-recursos .card").forEach(card => {
-    card.style.display = (filtro === "todos" || card.dataset.tipo === filtro) ? "block" : "none";
+const filtroTipo = { botoes: document.querySelectorAll("#filtros-tipo .filtro-btn"), valor: "todos" };
+const filtroPublico = { botoes: document.querySelectorAll("#filtros-publico .filtro-btn"), valor: "todos" };
+const cards = document.querySelectorAll("#lista-recursos .card");
+const status = document.getElementById("status-lista");
+
+function aplicar() {
+  let visiveis = 0;
+  cards.forEach((card) => {
+    const okTipo = filtroTipo.valor === "todos" || card.dataset.tipo === filtroTipo.valor;
+    const okPublico = filtroPublico.valor === "todos" || card.dataset.publico.split(" ").includes(filtroPublico.valor);
+    const mostrar = okTipo && okPublico;
+    card.hidden = !mostrar;
+    if (mostrar) visiveis++;
   });
-});
+  status.textContent = visiveis === 0
+    ? "Nenhum local com esses filtros. Tente outra combinação."
+    : `Mostrando ${visiveis} de ${cards.length} locais.`;
+}
+
+function ligar(grupo, idDoGrupo) {
+  document.getElementById(idDoGrupo).addEventListener("click", (e) => {
+    const botao = e.target.closest(".filtro-btn");
+    if (!botao) return;
+    grupo.valor = botao.dataset.valor;
+    grupo.botoes.forEach((b) => {
+      const ativo = b === botao;
+      b.classList.toggle("ativo", ativo);
+      b.setAttribute("aria-pressed", String(ativo));
+    });
+    aplicar();
+  });
+}
+
+ligar(filtroTipo, "filtros-tipo");
+ligar(filtroPublico, "filtros-publico");
 </script>
 
 </body>

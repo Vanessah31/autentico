@@ -6,62 +6,91 @@
 <title>Teste de Rastreio AQ-10 — Autêntico</title>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="icon" href="assets/img/logo-icon.png">
+<script src="assets/js/acessibilidade.js"></script>
 </head>
 <body>
 
+<a class="pular" href="#conteudo">Pular para o conteúdo</a>
+
 <header class="site-header">
   <div class="container">
-    <a href="index.html" class="brand"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
-    <nav class="main-nav">
+    <a href="index.html" class="brand" aria-label="Autêntico, página inicial"><img src="assets/img/logo-wordmark-texto.png" alt="Autêntico" class="brand-wordmark"><img src="assets/img/coracao-puzzle.png" alt="" class="brand-coracao"></a>
+    <nav class="main-nav" aria-label="Navegação principal">
       <a href="sobre-tea.html">Sobre TEA</a>
-      <a href="teste-aq10.html" class="ativo">Teste AQ-10</a>
+      <a href="teste-aq10.html" class="ativo" aria-current="page">Teste AQ-10</a>
       <a href="onde-buscar-ajuda.html">Onde Buscar Ajuda</a>
       <a href="forum.html">Fórum</a>
-      <a href="vivencias.html">Vozes & Vivências</a>
+      <a href="vivencias.html">Vozes &amp; Vivências</a>
       <a href="quem-somos.html">Quem Somos</a>
     </nav>
   </div>
 </header>
-<div class="tira-assinatura"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+<div class="tira-assinatura" aria-hidden="true"><span class="v"></span><span class="a"></span><span class="az"></span><span class="g"></span></div>
+
+<main id="conteudo" tabindex="-1">
 
 <section class="page">
   <div class="container">
 
+    <h1>Teste de rastreio AQ-10</h1>
+
     <div id="tela-disclaimer">
       <div class="disclaimer">
-        <h2>Antes de começar, é importante que você saiba:</h2>
+        <h2 id="titulo-aviso" tabindex="-1">Antes de começar, é importante que você saiba:</h2>
         <p>Este teste é uma ferramenta de <strong>rastreio</strong>, não de diagnóstico. Ele foi desenvolvido para indicar se pode valer a pena buscar uma avaliação profissional mais aprofundada — ele <strong>não confirma nem descarta</strong> o diagnóstico de TEA.</p>
         <p>Apenas um profissional especializado (psiquiatra, neurologista ou psicólogo com experiência em neurodesenvolvimento) pode realizar uma avaliação diagnóstica completa.</p>
         <p>Seu resultado é pessoal e não fica exposto publicamente no site.</p>
-        <label style="display:flex; align-items:center; gap:8px; margin:16px 0; font-size:14.5px;">
+        <label class="aq-confirma" for="check-entendi">
           <input type="checkbox" id="check-entendi">
           Li e entendi que este teste não substitui uma avaliação profissional.
         </label>
-        <button class="btn btn-primary" id="btn-continuar" disabled>Entendi, quero continuar</button>
+        <button type="button" class="btn btn-primary" id="btn-continuar">Entendi, quero continuar</button>
+        <p class="erro-msg" id="erro-aviso" role="alert" hidden></p>
       </div>
-      <p class="aviso-fonte">Baseado na versão brasileira validada do AQ-10 Adult — tradução do Instituto de Pesquisas Neuropsiquiátricas, SUAV/RJ, 2020, adaptação da escala original de Baron-Cohen et al., 2001.</p>
+      <p class="aviso-fonte"><span lang="en">Autism Spectrum Quotient – Adult (AQ-10)</span>. Tradução para o português do Brasil: Instituto de Pesquisas Neuropsiquiátricas, SUAV – Waldir Toledo, 2020. Referência: Allison C, Auyeung B e Baron-Cohen S (2012), <span lang="en">Journal of the American Academy of Child and Adolescent Psychiatry</span>, 51(2):202-12. © SBC/CA/BA/ARC/Cambridge University.</p>
     </div>
 
-    <form id="tela-teste" style="display:none;">
-      <h2>Teste de Rastreio AQ-10</h2>
-      <p>Para cada afirmação, marque a opção que melhor representa você.</p>
+    <form id="tela-teste" novalidate hidden>
+      <h2 id="titulo-teste" tabindex="-1"><span lang="en">Autism Spectrum Quotient – Adult (AQ-10)</span></h2>
+      <p class="aq-intro">Um guia de referência rápido para adultos com suspeita de autismo que não têm deficiência de aprendizagem.</p>
+      <p class="aq-instrucao">Por favor, marque apenas uma opção por pergunta.</p>
 
-      <div class="progress-track"><div class="progress-fill" id="progress-fill"></div></div>
+      <div class="progress-track" role="progressbar" aria-label="Progresso do teste" aria-valuemin="0" aria-valuemax="10" aria-valuenow="0" aria-valuetext="0 de 10 respondidas"><div class="progress-fill" id="progress-fill"></div></div>
       <p class="progress-label" id="progress-label">0 de 10 respondidas</p>
 
+      <div class="aq-cab" aria-hidden="true">
+        <span></span>
+        <span>Concordo plenamente</span>
+        <span>Concordo parcialmente</span>
+        <span>Discordo parcialmente</span>
+        <span>Discordo plenamente</span>
+      </div>
       <div id="lista-perguntas"></div>
 
-      <button type="submit" class="btn btn-primary" id="btn-ver-resultado" disabled style="margin-top:20px;">Ver resultado</button>
+      <button type="submit" class="btn btn-primary" id="btn-ver-resultado" style="margin-top:24px;">Ver resultado</button>
+      <p class="erro-msg" id="erro-teste" role="alert" hidden></p>
+
+      <p class="aviso-fonte"><span lang="en">Autism Spectrum Quotient – Adult (AQ-10)</span>. Tradução para o português do Brasil: Instituto de Pesquisas Neuropsiquiátricas, SUAV – Waldir Toledo, 2020. Referência: Allison C, Auyeung B e Baron-Cohen S (2012), <span lang="en">Journal of the American Academy of Child and Adolescent Psychiatry</span>, 51(2):202-12. © SBC/CA/BA/ARC/Cambridge University.</p>
     </form>
 
-    <div id="resultado-box">
+    <div id="resultado-box" hidden>
+      <h2 id="titulo-resultado" tabindex="-1">Seu resultado</h2>
       <p class="pontuacao">Sua pontuação foi <span id="pontuacao-valor">0</span> de 10.</p>
       <p id="resultado-texto"></p>
       <a href="onde-buscar-ajuda.html" class="btn btn-primary">Ver onde buscar ajuda em Brasília/DF</a>
+      <p class="aviso-fonte"><span lang="en">Autism Spectrum Quotient – Adult (AQ-10)</span>. Tradução para o português do Brasil: Instituto de Pesquisas Neuropsiquiátricas, SUAV – Waldir Toledo, 2020. Referência: Allison C, Auyeung B e Baron-Cohen S (2012), <span lang="en">Journal of the American Academy of Child and Adolescent Psychiatry</span>, 51(2):202-12. © SBC/CA/BA/ARC/Cambridge University.</p>
     </div>
 
   </div>
 </section>
+
+</main>
+
+<aside class="apoio-agora" aria-label="Apoio emocional">
+  <div class="container">
+    <p><strong>Precisa de apoio agora?</strong> Ligue <a href="tel:188">188</a> (CVV, gratuito, 24 horas). Em emergência, ligue <a href="tel:192">192</a> (SAMU).</p>
+  </div>
+</aside>
 
 <footer class="site-footer">
   <div class="container">
