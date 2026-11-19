@@ -3,6 +3,17 @@
 Plataforma de apoio ao diagnóstico tardio de TEA — versão estática (HTML/CSS/JS),
 criada para publicação no GitHub Pages como entrega do MVP.
 
+**Site no ar:** https://vanessah31.github.io/autentico/
+
+## Autoria e equipe
+
+Projeto da disciplina **Laboratório de Inovação IV** (Análise e Desenvolvimento de Sistemas, Faculdade Senac DF), com orientação da professora **Maristela Oliveira**.
+
+- **Desenvolvimento do site e do fórum: Vanessa Sousa da Silva** ([@Vanessah31](https://github.com/Vanessah31)). Código em HTML, CSS e JavaScript (site), Flask e SQLite/MySQL (fórum), teste AQ-10 e recursos de acessibilidade.
+- **Equipe do projeto:** Cicera Taysa de Freitas Batista, Vanessa Sousa da Silva e Verônica Alves.
+
+© 2026 Equipe Autêntico. Todos os direitos reservados. O conteúdo e o código não podem ser copiados ou republicados sem autorização das autoras.
+
 ## Sobre esta versão
 
 Esta é uma versão **estática** do projeto Autêntico, sem backend real — feita
@@ -83,3 +94,8 @@ autentico-site/
 Antes de publicar, revisar com a professora orientadora o texto da seção
 "Quem Somos" — a versão aqui já foi escrita sem mencionar detalhes pessoais
 específicos que não foram formalmente autorizados para divulgação pública.
+
+
+## Libras (VLibras)
+
+Todas as páginas carregam o plugin gratuito **VLibras** (governo federal), que traduz automaticamente o texto selecionado para Libras com um avatar. O botão aparece no lado esquerdo da tela. A tradução é automática e pode errar em termos técnicos; ela não substitui um intérprete humano. Precisa de internet. Para remover, apague o bloco `<div vw>` e os dois `<script>` do final de cada página.

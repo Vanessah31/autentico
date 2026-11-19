@@ -32,7 +32,7 @@
 <section class="page">
   <div class="container">
     <h1>Vozes &amp; Vivências</h1>
-    <p>Números e informações técnicas ajudam a entender o TEA — mas são as histórias reais que ajudam a gente a se sentir compreendido. Aqui reunimos três vivências: quem recebeu o diagnóstico na vida adulta, quem cria um filho ou filha atípico, e como uma instituição de ensino pode acolher a neurodivergência.</p>
+    <p>Números e informações técnicas ajudam a entender o TEA — mas são as histórias reais que ajudam a gente a se sentir compreendido. Aqui reunimos três vivências, em palavras de quem as vive: quem recebeu o diagnóstico na vida adulta, quem cria um filho ou filha atípico, e como uma instituição de ensino pode acolher a neurodivergência.</p>
 
     <h2 class="sr-only">Entrevistas</h2>
 
@@ -40,21 +40,44 @@
       <span class="tag">Diagnóstico tardio</span>
       <h3>Entrevista: Pessoa com diagnóstico tardio</h3>
       <p>Roteiro contempla a trajetória antes do diagnóstico, o que levou à busca por avaliação, e o que mudou depois do laudo.</p>
-      <p><em>Vídeo em produção — em breve disponível aqui.</em></p>
+      <p><em>Entrevista em andamento — em breve disponível aqui.</em></p>
     </div>
 
-    <div class="card">
-      <span class="tag">Maternidade/paternidade atípica</span>
-      <h3>Entrevista: Mãe/pai atípico</h3>
-      <p>Roteiro contempla o processo até o diagnóstico do filho ou filha, os primeiros desafios, e o que fez diferença na jornada da família.</p>
-      <p><em>Vídeo em produção — em breve disponível aqui.</em></p>
-    </div>
+    <article class="card entrevista" aria-labelledby="ent-francisca">
+      <span class="tag">Maternidade atípica</span>
+      <div class="entrevista-cab">
+        <img class="entrevista-avatar" src="assets/img/francisca-soares.jpg" alt="Foto de Francisca Soares sorrindo" width="120" height="120">
+        <div>
+          <h3 id="ent-francisca">Francisca Soares</h3>
+          <p class="entrevista-papel">Mãe atípica</p>
+        </div>
+      </div>
+
+      <h4>Como foi o caminho até o diagnóstico do seu filho?</h4>
+      <p>O caminho até o diagnóstico do meu filho não foi fácil. Foram muitas dúvidas e observações. Ele começou a se desenvolver, mas depois apresentou algumas regressões. Na época da pandemia, muitas pessoas diziam que era por causa do uso das máscaras, mas meu coração de mãe sentia que tinha algo a mais. Então procurei ajuda profissional, passei por várias consultas e avaliações até chegar ao diagnóstico. Foi um momento difícil, mas eu sabia que precisava buscar o melhor para ele.</p>
+
+      <h4>O que foi mais difícil no começo?</h4>
+      <p>O mais difícil para mim foi aprender a lidar com as crises, entender o que meu filho queria e precisava, principalmente porque ele ainda não falava. Muitas vezes eu não sabia como ajudá-lo ou como entender o que estava sentindo. Foi um processo de muito aprendizado, paciência e, acima de tudo, amor.</p>
+
+      <h4>Que ajuda fez, ou faria, diferença para vocês?</h4>
+      <p>Com certeza, buscar ajuda de profissionais fez toda a diferença para nós. As terapias e o acompanhamento com neuropediatra foram muito importantes, pois me ajudaram a entender melhor meu filho, aprender a lidar com as crises e descobrir maneiras de estimular o desenvolvimento dele. Foi através dessas orientações que comecei a compreender melhor as necessidades do meu filho.</p>
+
+      <h4>O que você diria para quem está começando esse caminho agora?</h4>
+      <p>Eu diria para não desistir, seguir em frente e buscar ajuda de profissionais. Tenha paciência, respeite o tempo do seu filho e acredite no potencial dele. Cada criança tem seu próprio ritmo de desenvolvimento. Não perca a esperança, pois cada pequena conquista é uma grande vitória.</p>
+
+      <h4>De que momento com seu filho você mais se orgulha?</h4>
+      <blockquote class="entrevista-frase">
+        <p>O momento em que mais sinto orgulho do meu filho é quando vejo ele superando seus desafios, vencendo suas frustrações e conquistando coisas que antes pareciam tão difíceis. Cada evolução dele enche meu coração de alegria e me mostra o quanto ele é forte. Tenho muito orgulho de cada conquista do meu menino! ❤️</p>
+      </blockquote>
+
+      <p class="detalhe">Entrevista publicada com autorização de Francisca Soares. O nome do filho foi omitido para proteger a criança.</p>
+    </article>
 
     <div class="card">
       <span class="tag">Acolhimento institucional</span>
       <h3>Entrevista: Representante da faculdade</h3>
       <p>Roteiro contempla como a instituição pensa o acolhimento a estudantes neurodivergentes, e por que um projeto como o Autêntico é relevante para a faculdade.</p>
-      <p><em>Vídeo em produção — em breve disponível aqui.</em></p>
+      <p><em>Entrevista em andamento — em breve disponível aqui.</em></p>
     </div>
   </div>
 </section>
@@ -71,8 +94,26 @@
   <div class="container">
     <img src="assets/img/logo-wordmark.png" alt="Autêntico" class="footer-logo">
     <p><strong>Autêntico</strong> — Informação · Respeito · Inclusão</p>
+    <p>Desenvolvimento do site: <strong>Vanessa Sousa da Silva</strong> · Projeto da equipe Autêntico</p>
+    <p>© 2026 Equipe Autêntico. Todos os direitos reservados.</p>
   </div>
 </footer>
+
+<!-- VLibras: tradução automática do texto para Libras (plugin gratuito do governo federal). Se estiver sem internet, o botão simplesmente não aparece. -->
+<div vw class="enabled">
+  <div vw-access-button class="active"></div>
+  <div vw-plugin-wrapper>
+    <div class="vw-plugin-top-wrapper"></div>
+  </div>
+</div>
+<script src="https://vlibras.gov.br/app/vlibras-plugin.js" defer></script>
+<script>
+  window.addEventListener("load", function () {
+    if (window.VLibras && window.VLibras.Widget) {
+      new window.VLibras.Widget({ rootPath: "https://vlibras.gov.br/app", position: "L" });
+    }
+  });
+</script>
 
 </body>
 </html>
